@@ -193,6 +193,23 @@ public class ParserUtil {
         return new Appointment(trimmedAppointmentName, appointmentDate);
     }
 
+    public static LocalDateTime parseDate(String date) throws ParseException{
+        requireNonNull(date);
+        String trimmedDate = date.trim();
+        if (!Appointment.isValidDateFormat(trimmedDate)) {
+            throw new ParseException(Appointment.MESSAGE_DATE_CONSTRAINTS);
+        }
+
+        LocalDateTime appointmentDate;
+        try {
+            appointmentDate = Appointment.parseAppointmentDate(date);
+        } catch (DateTimeParseException e) {
+            throw new ParseException(Appointment.MESSAGE_INVALID_DATE);
+        }
+
+        return appointmentDate;
+    }
+
     /**
      * Parses a {@code String date} into a {@code LocalDate}.
      * Leading and trailing whitespaces will be trimmed.
