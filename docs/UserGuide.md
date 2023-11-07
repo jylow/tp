@@ -309,8 +309,8 @@ Schedules an appointment for a client using an index followed by the appointment
 Format: `schedule INDEX ap/APPOINTMENT_NAME d/APPOINTMENT_DATE_TIME`
 
 - Schedules appointment with the person at the specified `INDEX`. The index refers to the index number shown in the displayed person list.
-- Both appointment name and date must be provided.
-- If there is an existing appointment with the person when command is executed, you can replace it with a new appointment by clicking confirm when prompt is given.
+- Both appointment name and date MUST be provided.
+- If there is an existing appointment with the person when command is executed, you can replace it with a new appointment by clicking confirm when prompt is given. This command was deliberately made to force the user to click the button with the cursor to prevent carelessness of pressing enter twice in a row.
   ![schedule prompt](images/schedulePrompt.png)
 
 Acceptable Values: Refer to [Argument Summary](#argument-summary).
